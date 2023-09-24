@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62%;
+  font-family: "Lato";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #eff1f2;
+  box-shadow: 0rem 0rem 0.5rem 0.1rem #b7b7b7;
+  height: 5rem;
+  top: 0;
+}
+.header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  align-content: center;
+  gap: 2rem;
+  height: 100%;
+  margin-top: 1.5rem;
+}
+.header nav ul li {
+  list-style-type: none;
+}
+.header nav ul li a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #000000;
+  padding: 1rem;
+}
+.header nav ul li a:hover {
+  background-color: #1fb565;
+  color: rgb(247, 247, 92);
+  border-radius: 0.5rem;
+}
+.header nav ul li a.active {
+  background-color: #1fb565;
+  color: rgb(247, 247, 92);
+  border-radius: 0.5rem;
+}
+
+body {
+  background-color: #e3e3e3;
+  background-image: url(../image/33.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ToDo {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  height: 80vh;
+  border-radius: 1rem;
+  margin-top: 8rem;
+  padding-top: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.ToDo #addForm #submitBtn {
+  width: 50%;
+  margin-top: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: #1fb565;
+  box-shadow: 0.2rem 0.2rem 0rem 0.1rem #11b372;
+  color: rgb(247, 247, 92);
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.ToDo #addForm .inputDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin: 0 auto;
+  gap: 1rem;
+  margin-top: 3rem;
+  font-weight: bold;
+}
+.ToDo #addForm .inputDiv input {
+  width: 100%;
+  height: 4rem;
+  padding: 0rem 0rem 0rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #e3e3e3;
+  box-shadow: 0rem 0rem 0.1rem 0.1rem #b7b7b7;
+  border: none;
+  outline: none;
+}
+.ToDo #addForm .inputDiv label {
+  font-size: 1.6rem;
+}
+
+#TitleError,
+#DateError {
+  color: #f84665;
+  display: none;
+  font-size: 1.1rem;
+}
+
+.ChangeBorder {
+  border: 1px solid #f84665 !important;
+  animation: shake 0.5s;
+}
+
+.ChangeColor {
+  color: #f84665;
+}
+
+#toast {
+  visibility: hidden;
+  height: 100px;
+  min-width: 150px;
+  margin-left: 4px;
+  background-color: #035e03;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding-bottom: 16px;
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 2%;
+  bottom: 30px;
+  font-size: 14px;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@media (max-width: 500px) {
+  .ToDo #addForm #submitBtn,
+  .ToDo #addForm .inputDiv {
+    width: 75%;
+  }
+}
+@media (max-width: 240px) {
+  .ToDo {
+    height: 135vh;
+    margin-bottom: 2rem;
+  }
+  .ToDo #addForm #submitBtn,
+  .ToDo #addForm .inputDiv {
+    width: 95%;
+  }
+  #message {
+    height: 8rem;
+    width: 20rem;
+  }
+  #message #messageClose {
+    left: 16rem;
+    bottom: 7rem;
+  }
+}
+
+/*# sourceMappingURL=add_styles.css.map */

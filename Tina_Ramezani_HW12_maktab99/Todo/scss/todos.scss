@@ -1,0 +1,293 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+
+body {
+  background-color: $LightGray;
+  background-image: url(../image/33.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  @include headerstyle();
+}
+// ****************sidebarmenu***************
+.open-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin-top: 5rem;
+}
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.6s;
+}
+.sidebar-menu span,
+.sidebar-menu a {
+  margin: 1em;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.close-menu {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+// **************************Todo*************
+.todoMainDiv {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.ToDo {
+  width: 80%;
+  margin: 0 auto;
+  height: 80vh;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0rem 0rem 0.5rem 0.1rem #b7b7b7;
+}
+
+hr {
+  color: $BlackColor;
+  background-color: $BlackColor;
+  width: 100%;
+  margin-top: 2rem;
+}
+.items {
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 80%;
+}
+#listItem {
+  padding-left: 0;
+  margin: 0 5rem;
+
+  li {
+    list-style-type: none;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: 1rem 0;
+    border: 0.1rem solid #adadad;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    box-shadow: 0rem 0rem 0.6rem 0.3rem $LightGray;
+    background-color: $MainColor;
+  }
+}
+.top-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.operation {
+  display: flex;
+  font-size: 3rem !important;
+
+  div:nth-child(1) svg {
+    color: $BlueColor;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  div:nth-child(2) svg {
+    color: $RedColor;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  div:nth-child(3) svg {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  svg:hover {
+    border: 0.1rem solid $SecondColor;
+    border-radius: 0.5rem;
+  }
+}
+//*********************/* Modal for Delete */
+.deleteBox {
+  display: none;
+  height: 20rem;
+  width: 35rem;
+  background: $MainColor;
+  position: absolute;
+  border-radius: 0.5rem;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 0.1rem solid #a3a3a3;
+  background: rgba(115, 165, 135, 0.39);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.3px);
+  -webkit-backdrop-filter: blur(3.3px);
+  border: 1px solid rgba(115, 165, 135, 0.41);
+
+  .del-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.5rem 0 0 0.5rem;
+
+    img {
+      height: 4rem;
+    }
+
+    strong {
+      font-size: 2rem;
+      margin-left: 1rem;
+    }
+  }
+
+  .del-body {
+    p {
+      font-size: 1.6rem;
+      padding: 0 0 0.5rem 1rem;
+      font-weight: 600;
+    }
+
+    #itemTitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+
+  .del-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.2rem;
+
+    button {
+      border: 0;
+      outline: 0;
+      width: 45%;
+      background-color: $MainColor;
+      outline: 0;
+      height: 3rem;
+      cursor: pointer;
+      border-radius: 1rem;
+    }
+    #deleteItem {
+      background-color: rgb(243, 43, 43);
+      border: 0.25rem solid rgb(243, 43, 43);
+    }
+    #cancelDelete {
+      background-color: #4caf50;
+      border: 0.25rem solid #4caf50;
+    }
+  }
+}
+// ****************pagination**********************
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#pagination {
+  display: inline-flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-right: none;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#pagination a:last-child {
+  border-right: 1px solid #ddd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#pagination a.active {
+  background-color: #4caf50;
+  color: $lightyellow;
+  border: none;
+}
+
+#pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+// *************response****************
+
+@media (max-width: 500px) {
+  .todoMainDiv .ToDo {
+    width: 95%;
+
+    .items #listItem {
+      margin: 0 2rem;
+    }
+  }
+
+  .deleteBox {
+    height: 23rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .deleteBox {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+
+@media (max-width: 240px) {
+  .deleteBox {
+    height: 28rem;
+    width: 20rem;
+    text-align: center;
+
+    .del-body p {
+      padding: 0;
+    }
+  }
+}

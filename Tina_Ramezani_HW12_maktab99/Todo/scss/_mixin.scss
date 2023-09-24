@@ -1,0 +1,41 @@
+@import "variables";
+@mixin headerstyle {
+  position: fixed;
+  width: 100%;
+  background-color: $MainColor;
+  box-shadow: 0rem 0rem 0.5rem 0.1rem #b7b7b7;
+  height: 5rem;
+  top: 0;
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    align-content: center;
+    gap: 2rem;
+    height: 100%;
+    margin-top: 1.5rem;
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: $BlackColor;
+        padding: 1rem;
+
+        &:hover {
+          background-color: $BlueColor;
+          color: $lightyellow;
+          border-radius: 0.5rem;
+        }
+
+        &.active {
+          background-color: $BlueColor;
+          color: $lightyellow;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  }
+}

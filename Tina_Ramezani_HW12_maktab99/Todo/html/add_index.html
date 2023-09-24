@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/add_styles.css">
+  <title>ToDoList</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <div class="container header">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="../html/add_index.html" class="active">Home</a></li>
+            <li><a href="../html/todos.html">Todos</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div class="container">
+
+      <!-- ********************form******************* -->
+      <div class="ToDo">
+        <form id="addForm" name="myForm">
+          <div class="inputDiv title-div">
+            <label for="inputText" id="InputTextLabel">Title *</label>
+            <input id="inputTitle" name="inputText" type="text" placeholder="What will you do today ?" required>
+            <!-- ****************verify********** -->
+            <span id="TitleError">The title is required</span>
+          </div>
+
+          <div class="inputDiv description-div">
+            <label for="inputDescription">Description</label>
+            <input id="inputDescription" name="inputDescription" type="text" placeholder="Some Information">
+          </div>
+
+          <div class="inputDiv date-div">
+            <label for="inputDueDate" id="InputDateLabel">Due Date *</label>
+            <input id="inputDueDate" name="inputDueDate" type="date" placeholder="10/31/2023" required>
+            <!-- ****************verify********** -->
+            <span id="DateError">The date is required</span>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn">
+            submit
+          </button>
+
+        </form>
+      </div>
+    </div>
+    <!-- ***********************toast************* -->
+    <div id="toast">
+      <h3>Successful</h3>
+      <hr>
+      <p id="successful-submit">The todo successfully submitted</p>
+    </div>
+
+  </div>
+
+
+  <script src="../JS/add.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+
+.header {
+  @include headerstyle();
+}
+
+body {
+  background-color: $lightyellow;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+
+  img {
+    border-radius: 50%;
+  }
+}
